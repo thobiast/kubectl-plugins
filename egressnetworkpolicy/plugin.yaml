@@ -1,0 +1,9 @@
+name: "egressnetworkpolicy"
+shortDesc: "plugin for showing egressnetworkpolicy for all namespaces"
+longDesc: >
+    Plugin show Egress Network Policy for all namespaces.
+    By defaukt it does not check Openshift / Kubernetes namespaces.
+    The param all can be used to show all:
+    egressnetworkpolicy all
+example: "egressnetworkpolicy"
+command: "./egressnetworkpolicy.sh"

@@ -1,0 +1,5 @@
+name: "alertmanager_conf"
+shortDesc: "Plugin for showing alertmanager config file (namespace: openshift-monitoring)"
+longDesc: ""
+example: "alertmanager_conf"
+command: "./alertmanager_conf.sh"

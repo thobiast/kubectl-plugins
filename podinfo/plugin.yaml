@@ -1,0 +1,5 @@
+name: "podinfo"
+shortDesc: "Plugin for showing pod information"
+longDesc: ""
+example: "podinfo diag"
+command: "./podinfo.py"

@@ -1,0 +1,5 @@
+name: "nodeslabel"
+shortDesc: "Plugin for showing nodes label"
+longDesc: ""
+example: ""
+command: "./nodeslabel.sh"
