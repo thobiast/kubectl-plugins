@@ -10,6 +10,11 @@ It is a set of kubectl plugins. It has been tested with [Openshift](https://www.
 - **podevent**            Plugin for showing pods' event
 - **podinfo**             Plugin for showing pod information
 
+## Install
+
+```console
+[ -d ~/.kube/plugins ] || git clone https://github.com/thobiast/kubectl-plugins.git ~/.kube/plugins
+```
 
 ## know issues:
 
