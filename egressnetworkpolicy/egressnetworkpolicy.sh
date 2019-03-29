@@ -4,7 +4,8 @@
 # If no params specified, do not show egress network policy for
 # openshift/kubernetes namespaces
 # Params:
-#   all  - display egress network policy for all namespaces
+#        all  - display egress network policy for all namespaces
+#   namespace - display egress network policy for an specific namespace
 
 # Show colored output
 COLOR='1'
@@ -14,6 +15,27 @@ KUBE_BIN='oc'
 
 # Do not check network policy against the following namespaces
 REMOVE_NAMESPACES='default|glusterfs|kube-.*|openshift-.*|openshift'
+
+##############################################################################
+##############################################################################
+usage()
+{
+	echo "
+Show Egress Network Policy
+
+$0 [options]
+
+options:
+    -h           # show help
+    all          # show egress network policy for all namespaces
+    namespace    # show egress network policy for a specific namespace
+
+If no parameter, do not show egress network policy for
+openshift/kubernetes namespaces
+"
+	exit
+}
+
 
 ##############################################################################
 # Print messages
@@ -84,9 +106,22 @@ check_egress_policy()
 # Main
 ##############################################################################
 
+[ "$1" == "help" ] && usage
+
 all_namespaces=$($KUBE_BIN get projects -o name | sed 's#.*/##')
 namespaces=$(echo "$all_namespaces" | grep -v -E "^($REMOVE_NAMESPACES)")
-[ "$1" == "all" ] && namespaces="$all_namespaces"
+
+while [ "$1" != "" ]
+do
+	case "$1" in
+		"all") namespaces="$all_namespaces"
+			   shift ;;
+		*    ) namespaces=$(echo "$all_namespaces" | grep -w "$1")
+			   shift ;;
+	esac
+done
+
+[ -n "$namespaces" ] || { _echo R "Error: namespace not found"; exit 1; }
 
 for namespace in $namespaces; do
 	_echo B "- Checking $namespace"
@@ -99,3 +134,4 @@ for namespace in $namespaces; do
 	fi
 done
 
+# vim: ts=4
