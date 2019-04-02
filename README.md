@@ -16,6 +16,10 @@ It is a set of kubectl plugins. It has been tested with [Openshift](https://www.
 [ -d ~/.kube/plugins ] || git clone https://github.com/thobiast/kubectl-plugins.git ~/.kube/plugins
 ```
 
+## Example
+
+![kubectl plugin demo GIF](img/kubectl-plugin.gif)
+
 ## know issues:
 
 - egressnetworkpolicy: This plugin only works with Openshift. There is no egressnetworkpolicy resource on Kubernetes.
