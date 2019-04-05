@@ -1,0 +1,5 @@
+name: "route_whitelist"
+shortDesc: "Plugin for showing route haproxy ip_whitelist"
+longDesc: ""
+example: "route_whitelist"
+command: "./route_whitelist.sh"

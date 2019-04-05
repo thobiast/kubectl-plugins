@@ -9,6 +9,8 @@ It is a set of kubectl plugins. It has been tested with [Openshift](https://www.
 - **nodeslabel**          Plugin for showing nodes label
 - **podevent**            Plugin for showing pods' event
 - **podinfo**             Plugin for showing pod information
+- **route_whitelist**     Plugin for showing route haproxy ip_whitelist
+
 
 ## Install
 
