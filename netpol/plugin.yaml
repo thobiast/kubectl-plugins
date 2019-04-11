@@ -1,0 +1,5 @@
+name: "netpol"
+shortDesc: "Plugin for showing network policy"
+longDesc: ""
+example: "netpol"
+command: "./netpol.py"
