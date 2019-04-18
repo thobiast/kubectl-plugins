@@ -1,0 +1,5 @@
+name: "nodesresource"
+shortDesc: "Plugin for showing nodes resource requests and limits group by nodes'label"
+longDesc: ""
+example: ""
+command: "./nodesresource.sh"
