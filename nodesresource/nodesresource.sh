@@ -76,6 +76,8 @@ print_node_requests()
 # Main
 ##############################################################################
 
+[ "${KUBECTL_PLUGINS_CALLER}" ] && KUBE_BIN="${KUBECTL_PLUGINS_CALLER}"
+
 all_nodes="$($KUBE_BIN get nodes --show-labels --no-headers)"
 
 labels=$(echo "$all_nodes"                                 |

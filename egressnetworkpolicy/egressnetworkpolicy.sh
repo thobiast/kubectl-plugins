@@ -108,6 +108,8 @@ check_egress_policy()
 
 [ "$1" == "help" ] && usage
 
+[ "${KUBECTL_PLUGINS_CALLER}" ] && KUBE_BIN="${KUBECTL_PLUGINS_CALLER}"
+
 all_namespaces=$($KUBE_BIN get projects -o name | sed 's#.*/##')
 namespaces=$(echo "$all_namespaces" | grep -v -E "^($REMOVE_NAMESPACES)")
 
